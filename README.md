@@ -26,7 +26,7 @@ The data form more of a continuum than two sharply separated groups (modest silh
 
 ## Limitations
 
-- Only cities with long, complete PM2.5/PM10/NO2 records are included. About 90% of the sample (850 of 945 cities) is in Europe, so the results mainly reflect European monitoring networks and should not be read as global.
+- Only cities with sufficient long-term PM2.5/PM10/NO2 coverage are included. About 90% of the sample (850 of 945 cities) is in Europe, so the results mainly reflect European monitoring networks and should not be read as global.
 - Annual values are aggregated into city-level medians, so year-to-year trends are not captured.
 - Population is available for only part of the sample and is not used for clustering.
 
@@ -34,7 +34,7 @@ The data form more of a continuum than two sharply separated groups (modest silh
 
 The dataset is **not included** in this repository. Download the Excel version of the *WHO Ambient Air Quality Database (Update 2024, V6.1)* from the [WHO website](https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database) and save it as:
 
-```
+```text
 data/who_ambient_air_quality_database_version_2024_(v6.1).xlsx
 ```
 
@@ -52,7 +52,7 @@ python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 
-# create the data/ folder and add the WHO Excel file (see "Data")
+# Download the WHO Excel file and place it in the data/ folder (see "Data")
 jupyter notebook air_quality_clustering.ipynb
 ```
 
@@ -63,4 +63,5 @@ jupyter notebook air_quality_clustering.ipynb
 ├── air_quality_clustering.ipynb   # full analysis
 ├── requirements.txt
 ├── README.md
-└── data/                          # not tracked; add the WHO Excel file here
+├── .gitignore
+└── data/                          # add the WHO Excel file here
